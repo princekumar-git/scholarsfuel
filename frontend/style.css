@@ -1,1 +1,319 @@
-/* some random text to create a change in repo */
+/* Basic Reset & Typography */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: #2ecc71; /* Green */
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.btn-small:hover {
+    background-color: #27ae60;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #3498db;
+    margin: 0;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 25px;
+}
+
+.nav-list a {
+    color: #555;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #3498db;
+}
+
+/* Hamburger Menu Toggle for Mobile */
+.menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #333;
+    margin-bottom: 4px;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x500/3498db/ffffff?text=College+Campus+Background') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* Resources Section */
+.resources-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+
+.resource-category {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid #3498db;
+}
+
+.resource-category h4 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #34495e;
+}
+
+.resource-category h4 i {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.resource-category p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.resource-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    background-color: #ecf0f1; /* Light grey */
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.resource-card h5 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.resource-card p {
+    font-size: 0.95em;
+    color: #777;
+    flex-grow: 1; /* Allows card content to take available space */
+}
+
+
+/* Footer */
+.footer {
+    background-color: #2c3e50; /* Dark blue-gray */
+    color: #ecf0f1; /* Light grey */
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer .social-links a {
+    color: #ecf0f1;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 100;
+        padding: 20px 0;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger on smaller screens */
+    }
+
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    .resource-category {
+        padding: 20px;
+    }
+
+    .resource-category h4 {
+        font-size: 1.5em;
+    }
+
+    .resource-items {
+        grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+    }
+}

@@ -1,340 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScholarsFuel - Ignite Your Potential</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        /* Modern CSS Reset and Font */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.7;
-            background-color: #f4f7f6;
-            color: #333;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background-color: #fff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #2563eb;
-        }
-
-        .nav-links {
-            display: none;
-            list-style: none;
-            margin-left: auto;
-        }
-
-        .nav-links.open {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            padding: 1rem 20px;
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-                flex-direction: row;
-                position: static;
-                width: auto;
-                background-color: transparent;
-                box-shadow: none;
-                padding: 0;
-            }
-        }
-
-        .nav-links li {
-            margin: 0 1.2rem;
-        }
-
-        .nav-links li a {
-            color: #4a5568;
-            font-weight: 500;
-        }
-
-        .nav-links li a:hover {
-            color: #2563eb;
-        }
-
-        .mobile-menu-button {
-            display: block;
-            border: none;
-            background: none;
-            padding: 0.75rem;
-            cursor: pointer;
-        }
-
-        @media (min-width: 768px) {
-            .mobile-menu-button {
-                display: none;
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: #eff6ff;
-            padding: 6rem 20px;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: #4a5568;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .hero-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .hero-button.primary {
-            background-color: #2563eb;
-            color: #fff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-button.primary:hover {
-            background-color: #1d4ed8;
-        }
-
-        .hero-button.secondary {
-            background-color: #f3f4f6;
-            color: #2563eb;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        }
-
-        .hero-button.secondary:hover {
-            background-color: #e5e7eb;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 5rem 20px;
-        }
-
-        .features-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: #333;
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 992px) {
-            .features-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .feature-card {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 0.75rem;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .feature-card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card-description {
-            color: #555;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #f7fafc;
-            padding: 2.5rem 0;
-            text-align: center;
-            color: #718096;
-            font-size: 0.9rem;
-        }
-
-        .footer-links {
-            margin-top: 0.75rem;
-        }
-
-        .footer-links a {
-            margin: 0 0.75rem;
-            color: #718096;
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: #4a5568;
-        }
-    </style>
+    <title>College Student Hub - Your Ultimate Resource Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">ScholarsFuel</a>
-                <button class="mobile-menu-button" aria-label="Toggle navigation">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Opportunities</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+            <h1 class="logo">CollegeHub</h1>
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="#academic">Academic</a></li>
+                    <li><a href="#career">Career</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#student-life">Student Life</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Unlock Your Academic Potential</h1>
-            <p class="hero-subtitle">Your go-to platform for all things college – from study resources to career guidance and a vibrant student community.</p>
-            <div class="hero-buttons">
-                <a href="#" class="hero-button primary">Discover Resources</a>
-                <a href="#" class="hero-button secondary">Connect with Students</a>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to CollegeHub: Your All-in-One Student Resource Platform</h2>
+                <p>Unlock your potential with a wealth of academic materials, career guidance, skill development tools, and vibrant student life information.</p>
+                <a href="#resources" class="btn">Explore Resources</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="features">
-        <div class="container">
-            <h2 class="features-title">Explore What ScholarsFuel Offers</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3 class="feature-card-title">📚 Vast Resource Library</h3>
-                    <p class="feature-card-description">Dive into a curated collection of notes, e-books, past exam papers, and syllabus-specific materials to ace your academics.</p>
+        <section id="resources" class="resources-section">
+            <div class="container">
+                <h3 class="section-title">Browse Our Resources</h3>
+
+                <div class="resource-category" id="academic">
+                    <h4><i class="icon-academic">📚</i> Academic Resources</h4>
+                    <p>Notes, past papers, syllabus, project guides, and more.</p>
+                    <div class="resource-items">
+                        <div class="resource-card">
+                            <h5>Semester 1 Notes</h5>
+                            <p>Download comprehensive notes for all first-semester subjects.</p>
+                            <a href="#" class="btn-small">Download</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Previous Year Question Papers</h5>
+                            <p>Access question papers from the last five years for exam preparation.</p>
+                            <a href="#" class="btn-small">View Papers</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Research Paper Guidelines</h5>
+                            <p>Detailed guide on writing and formatting academic research papers.</p>
+                            <a href="#" class="btn-small">Read Guide</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3 class="feature-card-title">💼 Career & Internship Hub</h3>
-                    <p class="feature-card-description">Stay informed about the latest internships, workshops, job openings, and career development events to prepare for your future.</p>
+
+                <div class="resource-category" id="career">
+                    <h4><i class="icon-career">💼</i> Career Development</h4>
+                    <p>Internship opportunities, resume building, interview tips, and job alerts.</p>
+                    <div class="resource-items">
+                        <div class="resource-card">
+                            <h5>Internship Board</h5>
+                            <p>Find the latest internship opportunities tailored for college students.</p>
+                            <a href="#" class="btn-small">Browse Internships</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Resume & Cover Letter Templates</h5>
+                            <p>Professionally designed templates to help you stand out.</p>
+                            <a href="#" class="btn-small">Get Templates</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Interview Prep Guide</h5>
+                            <p>Tips and common questions to ace your next interview.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3 class="feature-card-title">📅 Events & Workshops Calendar</h3>
-                    <p class="feature-card-description">Never miss out on important college events, national seminars, exciting hackathons, and skill-enhancing workshops.</p>
+
+                <div class="resource-category" id="skills">
+                    <h4><i class="icon-skills">💡</i> Skill Enhancement</h4>
+                    <p>Online course recommendations, tutorial series, and workshops.</p>
+                    <div class="resource-items">
+                        <div class="resource-card">
+                            <h5>Coding Tutorials</h5>
+                            <p>Beginner-friendly tutorials for popular programming languages.</p>
+                            <a href="#" class="btn-small">Start Learning</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Public Speaking Workshop</h5>
+                            <p>Improve your communication skills with our interactive workshop materials.</p>
+                            <a href="#" class="btn-small">Access Materials</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Digital Marketing Fundamentals</h5>
+                            <p>A curated list of free online courses to kickstart your digital marketing journey.</p>
+                            <a href="#" class="btn-small">Explore Courses</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3 class="feature-card-title">🗣️ Engaging Student Forums</h3>
-                    <p class="feature-card-description">Connect with fellow students, ask questions, join study groups, and participate in discussions related to your courses and interests.</p>
-                </div>
-                <div class="feature-card">
-                    <h3 class="feature-card-title">🚀 Skill Development Center</h3>
-                    <p class="feature-card-description">Expand your horizons with our curated learning paths, short courses, and tutorials designed to help you gain in-demand skills.</p>
-                </div>
-                <div class="feature-card">
-                    <h3 class="feature-card-title">🛠️ Useful Student Tools</h3>
-                    <p class="feature-card-description">Access handy utilities like GPA calculators, code compilers, resume builders, and other tools to make your academic life easier.</p>
+
+                <div class="resource-category" id="student-life">
+                    <h4><i class="icon-student-life">🎉</i> Student Life</h4>
+                    <p>Event calendars, club information, campus news, and essential services.</p>
+                    <div class="resource-items">
+                        <div class="resource-card">
+                            <h5>Campus Event Calendar</h5>
+                            <p>Stay updated on all upcoming campus events and activities.</p>
+                            <a href="#" class="btn-small">View Calendar</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Student Club Directory</h5>
+                            <p>Discover and join various student clubs and organizations.</p>
+                            <a href="#" class="btn-small">Find Clubs</a>
+                        </div>
+                        <div class="resource-card">
+                            <h5>Student Support Services</h5>
+                            <p>Information on counseling, health services, and academic support.</p>
+                            <a href="#" class="btn-small">Get Support</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="footer" id="contact">
         <div class="container">
-            <p>&copy; 2025 ScholarsFuel. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
+            <p>&copy; 2025 CollegeHub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Twitter</a> |
+                <a href="#">LinkedIn</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuButton = document.querySelector('.mobile-menu-button');
-            const navLinks = document.querySelector('.nav-links');
-
-            mobileMenuButton.addEventListener('click', function () {
-                navLinks.classList.toggle('open');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
