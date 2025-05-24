@@ -117,6 +117,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo {
@@ -175,6 +176,8 @@ a:hover {
     width: 100%;
 }
 
+
+
 /* Hamburger Menu Toggle */
 .menu-toggle {
     display: none; /* Hidden by default */
@@ -204,9 +207,12 @@ a:hover {
 }
 
 
+
+
+
 /* --- Hero Section --- */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?college,students,campus-life') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/hero-section.mp4') no-repeat center center/cover;
     background-attachment: fixed; /* Parallax effect */
     color: #fff;
     text-align: center;
@@ -614,6 +620,20 @@ a:hover {
         display: flex; /* Show hamburger */
     }
 
+    .auth-buttons {
+        gap: 10px; /* Adjust gap for smaller screens */
+        position: absolute; /* Position them relative to the header */
+        right: 25px; /* Align to the right of the container */
+        top: 25px; /* Vertically align with logo */
+    }
+
+    .btn-login,
+    .btn-signup {
+        padding: 8px 15px; /* Smaller padding for mobile buttons */
+        font-size: 0.9em;
+    }
+
+
     .hero-section {
         padding: 80px 20px;
         min-height: 450px;
@@ -710,5 +730,16 @@ a:hover {
     }
     .footer-links h5, .footer-contact h5 {
         font-size: 1.1em;
+    }
+
+    .auth-buttons {
+        gap: 5px; /* Even smaller gap for very small screens */
+        right: 15px; /* Adjust right alignment */
+    }
+
+    .btn-login,
+    .btn-signup {
+        padding: 6px 12px; /* Even smaller padding */
+        font-size: 0.8em;
     }
 }
