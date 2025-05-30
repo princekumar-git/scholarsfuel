@@ -1,254 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/head-icon.png" type="image/png">
-    <title>ScholarsFuel - Ignite Your Academic Journey</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSE Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #F5F7FA;
+      color: #2E2E2E;
+    }
+    header {
+      background-color: #1E1E2F;
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search-bar {
+      display: flex;
+      gap: 0.5rem;
+      width: 50%;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+    }
+    .search-bar button {
+      background-color: #4FC3F7;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .layout {
+      display: flex;
+    }
+    aside {
+      width: 16rem;
+      background-color: white;
+      border-right: 1px solid #ccc;
+      padding: 1rem;
+      min-height: 100vh;
+    }
+    aside nav button {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 0.5rem 0;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    main {
+      flex: 1;
+      padding: 1.5rem;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card-thumb {
+      height: 160px;
+      background-color: #4FC3F7;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .icons {
+      display: flex;
+      gap: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" style="display: flex;align-items: center;">
-                    <img src="../assets/head-icon.png" alt="ScholarsFuel Logo" class="logo-img">
-                    <h1 class="logo-text">ScholarsFuel</h1>
-                </a>
-            </div>
-            <nav class="nav">
-                <ul class="nav-list" id="navList">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#academic">Academic</a></li>
-                    <li><a href="#career">Career</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#student-life">Student Life</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-
-        </div>
-    </header>
-
+  <header>
+    <div class="logo">CSE Hub</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search resources..." />
+      <button>🔍</button>
+    </div>
+    <div class="icons">
+      <span>🔔</span>
+      <span>👤</span>
+    </div>
+  </header>
+  <div class="layout">
+    <aside>
+      <nav>
+        <button onclick="showTab('home')">Home</button>
+        <button onclick="showTab('courses')">Courses</button>
+        <button onclick="showTab('tutorials')">Tutorials</button>
+        <button onclick="showTab('pyq')">PYQ & Syllabus</button>
+        <button onclick="showTab('resources')">Additional Resources</button>
+      </nav>
+    </aside>
     <main>
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Your Ultimate Hub for College Success</h2>
-                    <p>Unlock your full potential with curated academic resources, essential career guidance, and vibrant student life connections.</p>
-                    <div class="hero-buttons">
-                        <a href="#features" class="btn btn-primary">Discover More</a>
-                        <a href="login-index.html" class="btn btn-secondary">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <h3 class="section-heading">Who We Are</h3>
-                <div class="about-content">
-                    <p>ScholarsFuel is dedicated to empowering college students with the tools and information they need to thrive. From mastering complex subjects to landing dream internships and enriching campus life, we're your all-in-one platform for growth and achievement.</p>
-                    <p>Our mission is to simplify your college journey by providing easy access to high-quality, relevant resources, fostering a community of learners, and helping you navigate every challenge and opportunity that comes your way.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="features-section">
-            <div class="container">
-                <h3 class="section-heading">Why Choose ScholarsFuel?</h3>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-book-reader feature-icon"></i>
-                        <h5>Comprehensive Resources</h5>
-                        <p>Access notes, past papers, project guides, and more across all disciplines.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-handshake feature-icon"></i>
-                        <h5>Career Kickstart</h5>
-                        <p>Find internships, build professional resumes, and ace your interviews.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-lightbulb feature-icon"></i>
-                        <h5>Skill Development</h5>
-                        <p>Enhance your abilities with tutorials, workshops, and online course recommendations.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-users feature-icon"></i>
-                        <h5>Vibrant Campus Life</h5>
-                        <p>Stay connected with events, club directories, and student support services.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="academic" class="resource-category-section">
-            <div class="container">
-                <h3 class="section-heading">Academic Resources <i class="fas fa-graduation-cap category-icon"></i></h3>
-                <p class="category-description">Dive deep into your studies with our extensive collection of academic materials designed to boost your grades.</p>
-                <div class="resource-items-grid">
-                    <div class="resource-card">
-                        <h5>Semester 1 Notes</h5>
-                        <p>Download comprehensive notes for all first-semester subjects, meticulously organized.</p>
-                        <a href="#" class="btn-card">Download <i class="fas fa-download"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Previous Year Question Papers</h5>
-                        <p>Access question papers from the last five years for effective exam preparation and practice.</p>
-                        <a href="#" class="btn-card">View Papers <i class="fas fa-file-alt"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Research Paper Guidelines</h5>
-                        <p>Detailed guide on writing and formatting academic research papers, from topic selection to citation.</p>
-                        <a href="#" class="btn-card">Read Guide <i class="fas fa-book-open"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Syllabus & Curriculum</h5>
-                        <p>Stay updated with the latest syllabus and curriculum for all departments and courses.</p>
-                        <a href="#" class="btn-card">View Details <i class="fas fa-clipboard-list"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="career" class="resource-category-section bg-light">
-            <div class="container">
-                <h3 class="section-heading">Career Development <i class="fas fa-briefcase category-icon"></i></h3>
-                <p class="category-description">Prepare for your future with essential tools and opportunities to kickstart your professional journey.</p>
-                <div class="resource-items-grid">
-                    <div class="resource-card">
-                        <h5>Internship Board</h5>
-                        <p>Find the latest internship opportunities tailored for college students, across various industries.</p>
-                        <a href="#" class="btn-card">Browse <i class="fas fa-search"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Resume & Cover Letter Templates</h5>
-                        <p>Professionally designed, customizable templates to help your applications stand out.</p>
-                        <a href="#" class="btn-card">Get Templates <i class="fas fa-file-pdf"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Interview Prep Guide</h5>
-                        <p>Comprehensive tips, common questions, and mock interview scenarios to ace any interview.</p>
-                        <a href="#" class="btn-card">Learn More <i class="fas fa-question-circle"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Job Search Strategies</h5>
-                        <p>Discover effective methods and platforms for successful job searching post-graduation.</p>
-                        <a href="#" class="btn-card">Explore <i class="fas fa-chart-line"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="resource-category-section">
-            <div class="container">
-                <h3 class="section-heading">Skill Enhancement <i class="fas fa-code category-icon"></i></h3>
-                <p class="category-description">Broaden your horizons and develop valuable skills that set you apart in today's competitive world.</p>
-                <div class="resource-items-grid">
-                    <div class="resource-card">
-                        <h5>Coding Tutorials</h5>
-                        <p>Beginner-friendly tutorials for popular programming languages and development frameworks.</p>
-                        <a href="#" class="btn-card">Start Learning <i class="fas fa-laptop-code"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Public Speaking Workshop</h5>
-                        <p>Interactive workshop materials and exercises to improve your communication and presentation skills.</p>
-                        <a href="#" class="btn-card">Access <i class="fas fa-microphone-alt"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Digital Marketing Fundamentals</h5>
-                        <p>A curated list of free online courses and resources to kickstart your digital marketing career.</p>
-                        <a href="#" class="btn-card">Explore Courses <i class="fas fa-bullhorn"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Critical Thinking Exercises</h5>
-                        <p>Exercises and resources to sharpen your problem-solving and analytical thinking abilities.</p>
-                        <a href="#" class="btn-card">Practice <i class="fas fa-brain"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="student-life" class="resource-category-section bg-light">
-            <div class="container">
-                <h3 class="section-heading">Student Life <i class="fas fa-user-friends category-icon"></i></h3>
-                <p class="category-description">Make the most of your college experience with information on campus events, clubs, and essential support services.</p>
-                <div class="resource-items-grid">
-                    <div class="resource-card">
-                        <h5>Campus Event Calendar</h5>
-                        <p>Stay updated on all upcoming campus events, workshops, cultural festivals, and sports activities.</p>
-                        <a href="#" class="btn-card">View Calendar <i class="fas fa-calendar-alt"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Student Club Directory</h5>
-                        <p>Discover and join various student clubs and organizations that match your interests.</p>
-                        <a href="#" class="btn-card">Find Clubs <i class="fas fa-puzzle-piece"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Student Support Services</h5>
-                        <p>Information on counseling, health services, academic advising, and financial aid support.</p>
-                        <a href="#" class="btn-card">Get Support <i class="fas fa-hands-helping"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <h5>Campus News & Updates</h5>
-                        <p>Get the latest news and important announcements from your university or college administration.</p>
-                        <a href="#" class="btn-card">Read News <i class="fas fa-newspaper"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h3>Ready to Ignite Your Academic Journey?</h3>
-                <p>Join thousands of students who are excelling with ScholarsFuel. Start exploring today!</p>
-                <a href="#features" class="btn btn-primary">Explore All Resources</a>
-            </div>
-        </section>
+      <div id="home" class="tab-content active">
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>Welcome to CSE Hub</h3><p>Your go-to platform for BTech CSE.</p></div></div>
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>News & Updates</h3><p>Latest updates in tech and academia.</p></div></div>
+      </div>
+      <div id="courses" class="tab-content">
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>DSA Course</h3><p>Learn Data Structures and Algorithms step-by-step.</p></div></div>
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>Web Development</h3><p>Front-end and back-end development tutorials.</p></div></div>
+      </div>
+      <div id="tutorials" class="tab-content">
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>React Tutorial</h3><p>Build modern UIs with React.js.</p></div></div>
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>Python Tutorial</h3><p>Master Python for automation and data science.</p></div></div>
+      </div>
+      <div id="pyq" class="tab-content">
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>Semester 1 PYQs</h3><p>Access previous year question papers.</p></div></div>
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>Latest Syllabus</h3><p>Stay updated with your course structure.</p></div></div>
+      </div>
+      <div id="resources" class="tab-content">
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>Internship Portals</h3><p>Find tech internships with ease.</p></div></div>
+        <div class="card"><div class="card-content"><div class="card-thumb"></div><h3>Reference Books</h3><p>Best books for each subject.</p></div></div>
+      </div>
     </main>
+  </div>
 
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../assets/ScholarsFuel-logo-bg.png" alt="ScholarsFuel Logo" class="footer-logo-img">
-                    <h4 class="footer-logo-text">ScholarsFuel</h4>
-                </div>
-                <div class="footer-links">
-                    <h5>Quick Links</h5>
-                    <ul>
-                        <li><a href="#academic">Academic</a></li>
-                        <li><a href="#career">Career</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#student-life">Student Life</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h5>Connect With Us</h5>
-                    <p><i class="fas fa-envelope"></i> info@scholarsfuel.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ScholarsFuel. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
